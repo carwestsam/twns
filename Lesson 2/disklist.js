@@ -33,3 +33,7 @@ function diskImg(img) {
 function diskDesc(desc){
     return $("<p>").html(desc);
 }
+
+function add(){
+    console.log( "he" );
+}
