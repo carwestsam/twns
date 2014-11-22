@@ -10,8 +10,12 @@ $(document).ready(function(){
 });
 
 function dataToView(){
+    dataToView_withList( disks )
+}
+
+function dataToView_withList( diskList ){
     $('#contianer').empty();
-    var diskDivs = _.map(disks, function(disk){
+    var diskDivs = _.map( diskList, function(disk){
         return diskDiv(disk);
     });
     _.each(diskDivs, function(div){
@@ -48,3 +52,13 @@ function add(){
     disks.push( newProduct );
     dataToView();
 }
+
+function keyup(){
+    var keyWord = $("#search").val().toLowerCase();
+    var resultList = _.filter( disks, function(element){
+        return element.name.toLowerCase().indexOf( keyWord ) != -1;
+    } );
+    dataToView_withList( resultList );
+    console.log( resultList );
+}
+
