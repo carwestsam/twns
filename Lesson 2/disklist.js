@@ -6,13 +6,18 @@
  */
 
 $(document).ready(function(){
+    dataToView();
+});
+
+function dataToView(){
+    $('#contianer').empty();
     var diskDivs = _.map(disks, function(disk){
         return diskDiv(disk);
     });
     _.each(diskDivs, function(div){
         $("#contianer").append(div);
     });
-});
+}
 
 function diskDiv(disk){
     return $("<div>")
@@ -35,5 +40,11 @@ function diskDesc(desc){
 }
 
 function add(){
-    console.log( "he" );
+    var newProduct = {
+        name: $('#productName').val(),
+        img: $('#productImg').val(),
+        desc: $('#productDesc').val(),
+    }
+    disks.push( newProduct );
+    dataToView();
 }
