@@ -3,11 +3,15 @@
  * Copyright (C) 2014 carwest <carwest@carwest-UDISK>
  *
  * Distributed under terms of the MIT license.
- */ 
+ */
 
 $(document).ready(function(){
-    var container = $('#contianer');
-    console.log( diskDiv( disks[0] ) )
+    var diskDivs = _.map(disks, function(disk){
+        return diskDiv(disk);
+    });
+    _.each(diskDivs, function(div){
+        $("#contianer").append(div);
+    });
 });
 
 function diskDiv(disk){
