@@ -1,0 +1,99 @@
+/*
+ * slideshow.css
+ * Copyright (C) 2014 carwest
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+
+body {
+    background-color: black;
+
+    border: 0 solid #fff;
+    padding: 0;
+    margin: 0;
+
+    font-size: 16px;
+}
+
+.slideshow {
+    background-color: lightgray;
+
+
+    white-space:nowrap;
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+
+.slideshow .page{
+
+    background-color: blue;
+
+    display: inline-block;
+    position: absolute;
+
+    border: 0 solid yellow;
+    margin: 0;
+    padding: 0;
+    width: 1024px;
+    height: 768px;
+    overflow: hidden;
+}
+.slideshow .page.currentPage{
+    margin: 0;
+
+    background-color: pink;
+    z-index: 1;
+}
+.slideshow .page.nextPage{
+    margin: 0;
+
+    background-color: lightblue;
+    z-index: 1;
+}
+
+.slideshow .page .itemdetail{
+    position: absolute;
+
+    text-align: right;
+    right: 20%;
+    bottom: 1em;
+
+    z-index: 3;
+}
+
+.slideshow .page .itemdetail .item{
+    font-family: Arial;
+    position: relative;
+}
+.slideshow .page .itemdetail h3 strong{
+    font-size: 2em;
+}
+.slideshow .page .itemdetail .detail{
+    font-family: Arial;
+    position: relative;
+}
+.slideShow .page .itemdetail .detail span{
+    font-size: 2em;
+}
+.slideshow .page .itempic{
+    position: absolute;
+    background-color: aliceblue;
+
+    left : 10%;
+    top: 10%;
+
+    height: 80%;
+    width: 50%;
+
+    z-index: 2;
+}
+

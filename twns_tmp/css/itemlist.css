@@ -1,0 +1,64 @@
+/*
+ * itemList.css
+ * Copyright (C) 2014 carwest
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+body {
+	background: white;
+	color: black;
+}
+
+.itemlist{
+
+    position: absolute;
+
+    left: 10%;
+    margin: 0;
+    width: 80%;
+    background: pink;
+
+}
+
+.itemlist .item{
+
+    position: relative;
+    float: left;
+
+    left: 5%;
+    width: 45%;
+    background-color: blue;
+    font-family: arial;
+    text-align: center;
+}
+
+.itemlist .item h4{
+    position: relative;
+    float: top;
+
+    top: 0.5em;
+    text-align: center;
+} 
+
+.itemlist .item img{
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+}
+
+.itemlist .item p{
+    position: relative;
+    float: bottom;
+}
+
+
+.itemlist .item .del-wrapper{
+    position: relative;
+    float: bottom;
+    height: 3em;
+}
+
