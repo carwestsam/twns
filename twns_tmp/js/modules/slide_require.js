@@ -55,7 +55,7 @@ define( ["jquery"], function($ ){
 
             $(".slideshow").each( function(){
                 $(this).height( Height );
-                $(this).css('font-size', (Height/20) + 'px');
+                $(this).css('font-size', (Height/30) + 'px');
                 //$(this).width( $(window).innerWidth() );
                 $(this).children().each( function(){
                     $(this).height( Height );
@@ -76,6 +76,11 @@ define( ["jquery"], function($ ){
 
         init_animate:(function( thispt ){
             thispt.log( 'init_animate2' );
+            $(".slideshow .page").each( function(){
+                $(this).hide();
+                $(this).transition( { x:thispt.Width, y:0 },0 );
+                console.log( $(this) );
+            });
             $(".slideshow").each( function(){
                 var pages = $(this).children();
                 var length = (pages.length || 0);
@@ -85,7 +90,7 @@ define( ["jquery"], function($ ){
                         pages.eq(i).data( 'next', i+1 );
                     }pages.eq(length-1).data( 'next', 0 );
 
-                    pages.eq(length-1).addClass( 'currentPage' );
+                    pages.eq(length-1).addClass( 'currentPage' ).show();
                     pages.eq(0).addClass( 'nextPage' );
                     console.log( "init_width: " + thispt.width );
                     thispt.animate_setup( $(this), thispt );
@@ -110,17 +115,17 @@ define( ["jquery"], function($ ){
             var width = thispt.width;
             console.log( 'setup_width' + width );
 
-            slide.find( '.nextPage' ).removeClass( 'nextPage' );
+            slide.find( '.nextPage' ).removeClass( 'nextPage' ).hide();
+            slide.find( '.currentPage' ).removeClass( 'currentPage' );
             nextPage.transition({ x: width }, 1000, (function(){
-                nextPage.addClass('nextPage');
+                nextPage.addClass('nextPage').show();
             }));
             currentPage.transition({ x:0, delay:0 }, 1000);
-            slide.find( '.currentPage' ).removeClass( 'currentPage' );
-            currentPage.addClass( 'currentPage' );
+            currentPage.addClass( 'currentPage' ).show();
 
 
-            currentPage.transition({ x: -width, delay:3000 }, 1000, thispt.animate_finish( slide, thispt ));
-            nextPage.transition({ x: 0, delay:3000 }, 1000, thispt.animate_finish( slide, thispt ));
+            currentPage.transition({ x: -width, delay:1000 }, 1000, thispt.animate_finish( slide, thispt ));
+            nextPage.transition({ x: 0, delay:1000 }, 1000, thispt.animate_finish( slide, thispt ));
 
             return thispt.animate_setup;
 
