@@ -35,8 +35,33 @@ define( ["jquery", "underscore"], function($, _){
             $("#itemlist").append( div );
         } );
         $("#itemlist").children().each( function(){
-            $(this).find('.close').on( 'click', function(){
-                $(this).closest('.item').remove();
+            $(this).on('mouseover', function(){
+                console.log( 'mousemover' );
+                if ( $(this).data('scale') == 0 ){
+                    $(this).find('.close').transition( {scale:1.0}, 200 );
+                    $(this).data( 'scale', 1 );
+                }
+                //$(this).find( '.close' ).show();
+            });
+            $(this).on('mouseout', function(){
+                console.log( 'mousemleft' );
+                if ( $(this).data('scale') == 1 ){
+                    $(this).find('.close').transition( {scale:0}, 200 );
+                    $(this).data( 'scale', 0 );
+                }
+                //$(this).find( '.close' ).hide();
+            });
+            var closebutton = $(this).find('.close');
+
+            $(this).find('.close').transition( {scale:0}, 200 );
+            $(this).data('scale', 0);
+
+            closebutton.on( 'click', function(){
+                var thispt = this;
+                $(thispt).closest('.item').transition( {scale:0}, 500, function(){
+                    $(thispt).closest('.item').remove();
+                } )
+                //$(this).closest('.item').remove();
             } );
            //$(this).height ( $(this).width() / 0.744 + 'px');
         } );
