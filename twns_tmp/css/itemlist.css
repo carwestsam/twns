@@ -5,18 +5,34 @@
  * Distributed under terms of the MIT license.
  */
 
+body, h1, h2, h3, h4, p, li, ul, ol, div{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
 body {
 	background: white;
 	color: black;
 }
 
+.itemlistwrapper{
+    text-align: center;
+}
+
 .itemlist{
 
-    position: absolute;
+    display: inline-block;
+    position: relative;
 
-    left: 10%;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-top: 2em;
+    padding-bottom : 2em;
+
     width: 80%;
+    max-width: 990px;
     background: pink;
 
 }
@@ -25,12 +41,21 @@ body {
 
     position: relative;
     float: left;
+    overflow: hidden;
 
-    left: 5%;
+    margin-left: 3.3333%;
+    margin-top: 1em;
     width: 45%;
-    background-color: blue;
+    min-width: 15em;
+    max-width: 300px;
+    min-height: 20em;
+
     font-family: arial;
     text-align: center;
+
+    background-color: white;
+    box-shadow: 0em 0.4em 0.3em #777;
+    border-radius: 0.3em;
 }
 
 .itemlist .item h4{
@@ -39,18 +64,49 @@ body {
 
     top: 0.5em;
     text-align: center;
+
+    background-color: black;
+    color: white;
 } 
 
+.itemlist .item .title{
+    position: relative;
+
+    width: 100%;
+    padding: 0.5em 0em 0.5em 0.8333333em;
+
+    font-family: "黑体", Arial;
+    font-size: 1.5em;
+    text-align: left;
+
+    background-color: white;
+}
+.itemlist .item .desc{
+    position: relative;
+
+    width: 100%;
+    padding: 0em 0em 0.5em 1.25em;
+
+    font-family: "黑体", Arial;
+    font-size: 1em;
+    text-align: left;
+
+    color: darkgray;
+    background-color: white;
+}
+
 .itemlist .item img{
-    position: absolute;
+    position: relative;
 
     left: 0;
-    top: 0;
+    top: 1.5em;
 
     width: 100%;
 }
 
-.itemlist .item p{
+.itemlist .item .discription{}
+
+.itemlist .item .disciption p{
     position: relative;
     float: bottom;
 }
