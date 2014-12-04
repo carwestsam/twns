@@ -76,7 +76,7 @@ body {
     height: 4em;
     width: 4em;
 
-    background-image: url("/pics/close.png");
+    background-image: url("./pics/close.png");
     background-color: pink;
     background-size: 4em 4em;
     border-radius: 2em;

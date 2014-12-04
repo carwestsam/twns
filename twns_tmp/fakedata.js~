@@ -24,5 +24,24 @@ var disks = [
     img:"/pics/harddisk2.png",
     desc:"最轻薄的硬盘",
     price:"355元"
-}];
+},
+{
+    name:"CZ80",
+    img:"/pics/cz80.png",
+    desc:"至尊极速",
+    price: "318元"
+},
+{
+    name:"MAXELL CD-R",
+    img:"/pics/disk.png",
+    desc:"最美的声音",
+    price:"5元"
+},
+{
+    name:"500GB 硬盘",
+    img:"/pics/harddisk2.png",
+    desc:"最轻薄的硬盘",
+    price:"355元"
+}
+];
 
