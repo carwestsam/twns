@@ -25,15 +25,16 @@ body {
     display: inline-block;
     position: relative;
 
+    margin-top: 2em;
     margin-left: auto;
     margin-right: auto;
 
     padding-top: 2em;
     padding-bottom : 2em;
 
-    width: 80%;
+    width: 90%;
     max-width: 990px;
-    background: pink;
+    background: #7f7875;
 
 }
 
@@ -47,14 +48,14 @@ body {
     margin-top: 1em;
     width: 45%;
     min-width: 15em;
-    max-width: 300px;
+    max-width: 290px;
     min-height: 20em;
 
     font-family: arial;
     text-align: center;
 
     background-color: white;
-    box-shadow: 0em 0.4em 0.3em #777;
+    box-shadow: 0em 0.4em 0.5em #777;
     border-radius: 0.3em;
 }
 
@@ -69,19 +70,27 @@ body {
     color: white;
 } 
 
-.itemlist .item .title{
+.itemlist .item .note{
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    background-color: rgba( 255, 255, 255, 0.8 );
+}
+
+.itemlist .item .note .title{
     position: relative;
 
     width: 100%;
     padding: 0.5em 0em 0.5em 0.8333333em;
+    bottom: 0;
 
     font-family: "黑体", Arial;
     font-size: 1.5em;
     text-align: left;
 
-    background-color: white;
 }
-.itemlist .item .desc{
+.itemlist .item .note .desc{
     position: relative;
 
     width: 100%;
@@ -92,11 +101,22 @@ body {
     text-align: left;
 
     color: darkgray;
-    background-color: white;
+}
+.itemlist .item .note .price{
+    position: relative;
+
+    width: 100%;
+    padding: 0 0 0.5em 0;
+
+    font-family: "黑体", Arial;
+    text-align: right;
+    left: -1.25em;
+
+    color: red;
 }
 
 .itemlist .item img{
-    position: relative;
+    position: absolute;
 
     left: 0;
     top: 1.5em;
