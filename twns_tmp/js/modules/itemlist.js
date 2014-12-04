@@ -8,8 +8,23 @@
 define( ["jquery", "underscore"], function($, _){
     $(document).ready( function(){
         dataToView( disks );
-        console.log( "itemlist loaded" );
+        $('#filter').bind( 'keyup', function(){
+            filter();
+        } );
     } );
+
+    function filter(){
+        var keyword = $('#filter').val();
+        var items = $( '#itemlist' ).children();
+        items.each( function(){
+            console.log( $(this).data('name') );
+            if ( $(this).data( 'name' ).toLowerCase().indexOf( keyword ) == -1 ){
+                $(this).hide();
+            }else {
+                $(this).show();
+            }
+        } );
+    }
 
     function dataToView( data ){
         //$('#itemlist').empty();
@@ -20,6 +35,9 @@ define( ["jquery", "underscore"], function($, _){
             $("#itemlist").append( div );
         } );
         $("#itemlist").children().each( function(){
+            $(this).find('.close').on( 'click', function(){
+                $(this).closest('.item').remove();
+            } );
            //$(this).height ( $(this).width() / 0.744 + 'px');
         } );
     };
@@ -27,8 +45,10 @@ define( ["jquery", "underscore"], function($, _){
     function diskDiv( disk ){
         return $("<div>")
             .attr( "class", "item" )
+            .append( clossButton() )
             .append( diskImg(disk.img) )
-            .append( diskNote( disk.name, disk.desc, disk.price ) );
+            .append( diskNote( disk.name, disk.desc, disk.price ) )
+            .data( 'name', disk.name );
     };
 
     function diskImg( img ){
@@ -41,7 +61,9 @@ define( ["jquery", "underscore"], function($, _){
             .append( diskDesc( desc ) )
             .append( diskPrice( price ) );
     }
-
+    function clossButton(){
+        return $("<div>").attr( 'class', 'close' );
+    }
     function diskTitle( title ){
         return $("<div>")
             .attr( 'class', 'title' )

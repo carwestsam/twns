@@ -39,7 +39,6 @@ body {
 }
 
 .itemlist .item{
-
     position: relative;
     float: left;
     overflow: hidden;
@@ -69,6 +68,23 @@ body {
     background-color: black;
     color: white;
 } 
+
+.itemlist .item .close{
+    position: absolute;
+    display: block;
+
+    height: 4em;
+    width: 4em;
+
+    background-image: url("/pics/close.png");
+    background-color: pink;
+    background-size: 4em 4em;
+    border-radius: 2em;
+    border-top:0.1em groove lightgray;
+    border-bottom:0.1em solid  darkgray;
+    z-index: 2;
+
+}
 
 .itemlist .item .note{
     position: absolute;
