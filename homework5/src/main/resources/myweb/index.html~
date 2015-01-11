@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+    <meta charset="utf-8" />
+        <title>index</title>
+        <link rel="stylesheet" href="css/slideshow.css" type="text/css" />
+        <link rel="stylesheet" href="css/itemlist.css" type="text/css" />
+        <script type="text/javascript" src="js/angular/itemController/itemController.js"></script>
+        <script type="text/javascript" src="angular.min.js" charset="utf-8"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+    <body>
+        <div class="itemlistwrapper" ng-controller="itemController">
+            <div class="searchbar">
+                <input class="filter" type="text" id="filter" ng-model="namefilter"/>
+            </div>
+            <div class="itemlist" id="itemlist">
+                <div class="item" ng-repeat="disk in disks | filter:namefilter">
+                    <div class="close"></div>
+                    <img src="{{disk.img}}" /></img>
+                    <div class="note">
+                        <div class="title">
+                            {{disk.name}}
+                        </div>
+                        <div class="desc">
+                            {{disk.desc}}
+                        </div>
+                        <div class="price">
+                            {{disk.price}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+    <meta charset="utf-8" />
+        <title>index</title>
+        <link rel="stylesheet" href="css/slideshow.css" type="text/css" />
+        <link rel="stylesheet" href="css/itemlist.css" type="text/css" />
+        <script type="text/javascript" src="js/angular/itemController/itemController.js"></script>
+        <script type="text/javascript" src="angular1.2.js" charset="utf-8"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+    <body>
+        <div class="itemlistwrapper" ng-controller="itemController" ng-init="load()" >
+            <div class="searchbar">
+		<p>
+                    name:
+                    <input class="filter" type="text" id="filter" ng-model="search.name"/>
+                </p>
+                <p>
+                    description:
+                    <input class="filter" type="text" id="filter" ng-model="search.desc" />
+                </p>
+            </div>
+
+            <button ng-click="toggleAddBar()"> add one </button>
+            <button ng-click="toggleCart()"> My Cart </button>
+            </br>
+
+            <div ng-show="cart">
+                <hr />
+                <form class="cart" novalidate> 
+                    <ol>
+                        <li ng-repeat="item in mycart.List">
+                            {{ item.name }}
+                            :
+                            <button ng-click="minusToCartOne(item.id)">-</button>
+                            number {{ item.num }} 
+                            <button ng-click="addToCartOne(item.id)">+</button>
+                            :
+                            price {{ item.num*item.price }} <br>
+                            <hr />
+                        </li>
+                    </ol>
+                    tot Price: {{mycart.totPrice}}
+                </form>
+                <hr />
+            </div>
+
+            <div ng-show="addBar">
+                <hr />
+                <form class="addbar" novalidate >
+                    image URL : 
+                    <input name="imgUrl" type="text" ng-model="add.imgUrl" />
+                    <br />
+                    title :
+                    <input type="text" ng-model="add.title" />
+                    <br />
+                    description: 
+                    <input type="text" ng-model="add.desc" />
+                    <br />
+                    price:
+                    <input type="text" ng-model="add.price" />
+                    <br />
+                    <button ng-click="submitAdd()">submit</button>
+                </form>
+                <hr />
+            </div>
+            <div class="itemlist" id="itemlist">
+                <div class="item" ng-repeat="disk in disks | filter:search ">
+                    <img src= "{{disk.img}}" /></img>
+                    <div class="note">
+                        <div class="title">
+                            {{disk.id}}:{{disk.name}}
+                        </div>
+                        <div class="desc">
+                            {{disk.desc}}
+                        </div>
+                        <div class="price">
+                            <button ng-click="addToCartOne(disk.id)">cart</button>
+                            <button ng-click="deleteByIdFromMall( disk.id )">delete</button>
+                            {{disk.price}} 元
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

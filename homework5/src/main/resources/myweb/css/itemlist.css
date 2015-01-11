@@ -1,0 +1,156 @@
+/*
+ * itemList.css
+ * Copyright (C) 2014 carwest
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+body, h1, h2, h3, h4, p, li, ul, ol, div{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+	background: white;
+	color: black;
+}
+
+.itemlistwrapper{
+    text-align: center;
+}
+
+.itemlist{
+
+    display: inline-block;
+    position: relative;
+
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-top: 2em;
+    padding-bottom : 2em;
+
+    width: 90%;
+    max-width: 990px;
+    background: #7f7875;
+
+}
+
+.itemlist .item{
+    position: relative;
+    float: left;
+    overflow: hidden;
+
+    margin-left: 3.3333%;
+    margin-top: 1em;
+    width: 45%;
+    min-width: 15em;
+    max-width: 290px;
+    min-height: 20em;
+
+    font-family: arial;
+    text-align: center;
+
+    background-color: white;
+    box-shadow: 0em 0.4em 0.5em #777;
+    border-radius: 0.3em;
+}
+
+.itemlist .item h4{
+    position: relative;
+    float: top;
+
+    top: 0.5em;
+    text-align: center;
+
+    background-color: black;
+    color: white;
+} 
+
+.itemlist .item .close{
+    position: absolute;
+    display: block;
+
+    height: 4em;
+    width: 4em;
+
+    background-image: url("./pics/close.png");
+    background-color: pink;
+    background-size: 4em 4em;
+    border-radius: 2em;
+    border-top:0.1em groove lightgray;
+    border-bottom:0.1em solid  darkgray;
+    z-index: 2;
+
+}
+
+.itemlist .item .note{
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    background-color: rgba( 255, 255, 255, 0.8 );
+}
+
+.itemlist .item .note .title{
+    position: relative;
+
+    width: 100%;
+    padding: 0.5em 0em 0.5em 0.8333333em;
+    bottom: 0;
+
+    font-family: "黑体", Arial;
+    font-size: 1.5em;
+    text-align: left;
+
+}
+.itemlist .item .note .desc{
+    position: relative;
+
+    width: 100%;
+    padding: 0em 0em 0.5em 1.25em;
+
+    font-family: "黑体", Arial;
+    font-size: 1em;
+    text-align: left;
+
+    color: darkgray;
+}
+.itemlist .item .note .price{
+    position: relative;
+
+    width: 100%;
+    padding: 0 0 0.5em 0;
+
+    font-family: "黑体", Arial;
+    text-align: right;
+    left: -1.25em;
+
+    color: red;
+}
+
+.itemlist .item img{
+    position: absolute;
+
+    left: 0;
+    top: 1.5em;
+
+    width: 100%;
+}
+
+.itemlist .item .discription{}
+
+.itemlist .item .disciption p{
+    position: relative;
+    float: bottom;
+}
+
+
+.itemlist .item .del-wrapper{
+    position: relative;
+    float: bottom;
+    height: 3em;
+}
+
