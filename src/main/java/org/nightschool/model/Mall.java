@@ -133,7 +133,12 @@ public class Mall {
         if ( cartMap.get(id) == null ){
             cartMap.put(id, number);
         }else {
-            cartMap.put( id, cartMap.get(id) + number);
+            int num = cartMap.get(id) + number;
+            if ( num > 0 ) {
+                cartMap.put(id, cartMap.get(id) + number);
+            }else {
+                cartMap.remove(id);
+            }
         }
     }
 

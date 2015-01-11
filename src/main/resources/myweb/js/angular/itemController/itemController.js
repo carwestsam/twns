@@ -102,16 +102,22 @@ function itemController($scope, $http){
             } ).run();
     };
 
+
     $scope.addToCartOne = function( id ){
-        console.log("add To Cart One");
-        console.log ( id );
-        var postData = { Id: id, Num: 1 };
+        $scope.addToCart( id, 1 );
+    }
+    $scope.minusToCartOne = function( id ){
+        $scope.addToCart( id, -1 );
+    }
+    $scope.addToCart = function( id, num ){
+        console.log("add To Cart: ", id, num);
+        var postData = { Id: id, Num: num };
         $scope.postFactory.setPropertys(
             "addToCart",
             postData,
             function(){
                 $scope.refreshCart();
-                console.log("addToCartOne success");
+                console.log("addToCart success");
             }).run();
     };
 
